@@ -1,0 +1,22 @@
+string_list = input().split()
+total_sum = 0
+
+for string in string_list:
+    current_sum = 0
+    number = int(string[1:-1])
+    first_letter = string[0]
+    second_letter = string[-1]
+
+    if first_letter.isupper():
+        current_sum = number / (ord(first_letter) - 64)
+    elif first_letter.lower():
+        current_sum = number * (ord(first_letter) - 96)
+
+    elif second_letter.isupper():
+        current_sum -= ord(second_letter) - 64
+    elif second_letter.islower():
+        current_sum += ord(second_letter) - 96
+
+    total_sum += current_sum
+
+print(f'{total_sum:.2f}')
