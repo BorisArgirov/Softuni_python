@@ -1,0 +1,9 @@
+import re
+string = input()
+while string:
+    regex = r"\d+"
+    fount_number = re.findall(regex, string)
+    if fount_number:
+        print(' '.join(fount_number), end=' ')
+
+    string = input()
